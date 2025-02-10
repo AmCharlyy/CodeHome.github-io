@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configuración Premium - CodeHub</title>
+  <link rel="stylesheet" href="css/settings.css">
+</head>
+<body>
+  <!-- Barra de Navegación -->
+  <nav id="navbar">
+    <div class="logo">CodeHub</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="editor.html">Editor</a></li>
+      <li><a href="community.html">Comunidad</a></li>
+      <li><a href="challenges.html">Retos</a></li>
+      <li><a href="learning.html">Aprendizaje</a></li>
+      <li><a href="marketplace.html">Marketplace</a></li>
+      <li><a href="profile.html">Perfil</a></li>
+      <li><a href="notifications.html">Notificaciones</a></li>
+      <li><a href="settings.html" class="active">Configuración</a></li>
+    </ul>
+  </nav>
+
+  <div id="main-content">
+    <!-- Barra Lateral de Configuración -->
+    <aside id="settings-sidebar" class="box">
+      <ul class="settings-menu">
+        <li><a href="#account" class="active">Cuenta</a></li>
+        <li><a href="#privacy">Privacidad</a></li>
+        <li><a href="#appearance">Apariencia</a></li>
+        <li><a href="#notifications">Notificaciones</a></li>
+        <li><a href="#security">Seguridad</a></li>
+        <li><a href="#integrations">Integraciones</a></li>
+        <li><a href="#delete-account">Eliminar Cuenta</a></li>
+      </ul>
+    </aside>
+
+    <!-- Contenido de Configuración -->
+    <section id="settings-content" class="box">
+      <!-- Sección: Cuenta -->
+      <div id="account" class="settings-section active">
+        <h2>Cuenta</h2>
+        <form id="account-form">
+          <label for="username">Nombre de Usuario:</label>
+          <input type="text" id="username" name="username" placeholder="Tu nombre de usuario">
+
+          <label for="email">Correo Electrónico:</label>
+          <input type="email" id="email" name="email" placeholder="tuemail@ejemplo.com">
+
+          <label for="password">Contraseña Actual:</label>
+          <input type="password" id="password" name="password" placeholder="••••••••">
+
+          <label for="new-password">Nueva Contraseña:</label>
+          <input type="password" id="new-password" name="new-password" placeholder="••••••••">
+
+          <button type="submit" class="action-btn">Guardar Cambios</button>
+          <button type="reset" class="action-btn reset">Restablecer</button>
+        </form>
+      </div>
+
+      <!-- Sección: Privacidad -->
+      <div id="privacy" class="settings-section">
+        <h2>Privacidad</h2>
+        <form id="privacy-form">
+          <label>
+            <input type="checkbox" name="public-profile" checked>
+            Perfil Público
+          </label>
+          <label>
+            <input type="checkbox" name="show-email">
+            Mostrar Correo Electrónico
+          </label>
+          <label>
+            <input type="checkbox" name="activity-status" checked>
+            Mostrar Estado de Actividad
+          </label>
+          <button type="submit" class="action-btn">Guardar Cambios</button>
+          <button type="reset" class="action-btn reset">Restablecer</button>
+        </form>
+      </div>
+
+      <!-- Sección: Apariencia -->
+      <div id="appearance" class="settings-section">
+        <h2>Apariencia</h2>
+        <form id="theme-form">
+          <label for="theme">Tema:</label>
+          <select id="theme" name="theme">
+            <option value="metallic" selected>Metallic</option>
+            <option value="matte">Matte</option>
+            <option value="dark">Oscuro</option>
+            <option value="light">Claro</option>
+          </select>
+
+          <label for="font-size">Tamaño de Fuente:</label>
+          <select id="font-size" name="font-size">
+            <option value="small">Pequeño</option>
+            <option value="medium" selected>Mediano</option>
+            <option value="large">Grande</option>
+          </select>
+
+          <label for="animations">Animaciones:</label>
+          <select id="animations" name="animations">
+            <option value="enabled" selected>Activadas</option>
+            <option value="disabled">Desactivadas</option>
+          </select>
+
+          <label for="brightness">Brillo:</label>
+          <input type="range" id="brightness" name="brightness" min="50" max="150" value="100">
+
+          <button type="submit" class="action-btn">Guardar Cambios</button>
+          <button type="reset" class="action-btn reset">Restablecer</button>
+        </form>
+      </div>
+
+      <!-- Sección: Notificaciones -->
+      <div id="notifications" class="settings-section">
+        <h2>Notificaciones</h2>
+        <form id="notifications-form">
+          <label>
+            <input type="checkbox" name="email-notifications" checked>
+            Notificaciones por Correo
+          </label>
+          <label>
+            <input type="checkbox" name="push-notifications" checked>
+            Notificaciones Push
+          </label>
+          <label>
+            <input type="checkbox" name="sms-notifications">
+            Notificaciones por SMS
+          </label>
+          <label>
+            <input type="checkbox" name="newsletter">
+            Recibir Newsletter
+          </label>
+          <button type="submit" class="action-btn">Guardar Cambios</button>
+          <button type="reset" class="action-btn reset">Restablecer</button>
+        </form>
+      </div>
+
+      <!-- Sección: Seguridad -->
+      <div id="security" class="settings-section">
+        <h2>Seguridad</h2>
+        <form id="security-form">
+          <label for="two-factor">Autenticación de Dos Factores:</label>
+          <select id="two-factor" name="two-factor">
+            <option value="enabled">Activada</option>
+            <option value="disabled" selected>Desactivada</option>
+          </select>
+
+          <label for="recovery-email">Correo de Recuperación:</label>
+          <input type="email" id="recovery-email" name="recovery-email" placeholder="correo@recuperacion.com">
+
+          <label for="security-alerts">Alertas de Seguridad:</label>
+          <select id="security-alerts" name="security-alerts">
+            <option value="enabled" selected>Activadas</option>
+            <option value="disabled">Desactivadas</option>
+          </select>
+
+          <button type="submit" class="action-btn">Guardar Cambios</button>
+          <button type="reset" class="action-btn reset">Restablecer</button>
+        </form>
+      </div>
+
+      <!-- Sección: Integraciones -->
+      <div id="integrations" class="settings-section">
+        <h2>Integraciones</h2>
+        <form id="integrations-form">
+          <label>
+            <input type="checkbox" name="github-integration" checked>
+            Integrar con GitHub
+          </label>
+          <label>
+            <input type="checkbox" name="slack-integration">
+            Integrar con Slack
+          </label>
+          <label>
+            <input type="checkbox" name="google-drive-integration">
+            Integrar con Google Drive
+          </label>
+          <label>
+            <input type="checkbox" name="dropbox-integration">
+            Integrar con Dropbox
+          </label>
+          <button type="submit" class="action-btn">Guardar Cambios</button>
+          <button type="reset" class="action-btn reset">Restablecer</button>
+        </form>
+      </div>
+
+      <!-- Sección: Eliminar Cuenta -->
+      <div id="delete-account" class="settings-section">
+        <h2>Eliminar Cuenta</h2>
+        <p>¿Deseas eliminar tu cuenta? Esta acción es irreversible.</p>
+        <button id="delete-account-btn" class="action-btn danger">Eliminar Cuenta</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Scripts: Funcionalidades y animaciones -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Desliza la barra lateral al cargar
+      const sidebar = document.getElementById('settings-sidebar');
+      setTimeout(() => { sidebar.classList.add('active'); }, 100);
+
+      // Cambio de secciones al hacer clic en la barra lateral
+      const menuLinks = document.querySelectorAll('.settings-menu a');
+      const sections = document.querySelectorAll('.settings-section');
+
+      menuLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          // Quita la clase active de todos los links y secciones
+          menuLinks.forEach(item => item.classList.remove('active'));
+          sections.forEach(section => section.classList.remove('active'));
+          // Activa el link y la sección correspondiente
+          this.classList.add('active');
+          const target = this.getAttribute('href');
+          const targetSection = document.querySelector(target);
+          if(targetSection) {
+            targetSection.classList.add('active');
+          }
+        });
+      });
+
+      // Ejemplo de manejo de envíos de formularios (simulado)
+      const forms = document.querySelectorAll('form');
+      forms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          alert('Configuración guardada correctamente.');
+          // Aquí podrías agregar lógica para guardar la configuración (por ejemplo, vía AJAX o localStorage)
+        });
+      });
+
+      // Ejemplo para el botón de eliminar cuenta
+      const deleteBtn = document.getElementById('delete-account-btn');
+      deleteBtn.addEventListener('click', function() {
+        if(confirm('¿Estás seguro de que deseas eliminar tu cuenta? Esta acción es irreversible.')) {
+          alert('Cuenta eliminada.');
+          // Lógica de eliminación de cuenta
+        }
+      });
+    });
+  </script>
+  <script src="main.js"></script>
+</body>
+</html>

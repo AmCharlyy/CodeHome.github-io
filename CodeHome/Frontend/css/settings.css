@@ -1,0 +1,238 @@
+/* Variables y Reset */
+:root {
+    --primary-color: #c0c0c0;    /* Metallic Silver */
+    --secondary-color: #4ed2be;  /* Metallic Gold */
+    --bg-dark: #1a1a1a;          /* Fondo muy oscuro */
+    --bg-darker: #2b2b2b;        /* Matte Black */
+    --bg-light: #3c3c3c;         /* Metallic Gray */
+    --text-color: #e0e0e0;       /* Texto en gris claro */
+    --accent-color: #505050;     /* Acento gris */
+    --danger-color: #ff3b30;     /* Rojo de alerta */
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: var(--bg-dark);
+    color: var(--text-color);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* Barra de Navegación */
+  #navbar {
+    background-color: var(--bg-darker);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  #navbar .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+  }
+  
+  #navbar .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  #navbar .nav-links li {
+    margin-left: 2rem;
+  }
+  
+  #navbar .nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  #navbar .nav-links a:hover,
+  #navbar .nav-links a.active {
+    color: var(--primary-color);
+  }
+  
+  /* Contenido Principal */
+  #main-content {
+    display: flex;
+    padding: 2rem;
+    gap: 2rem;
+  }
+  
+  /* Barra Lateral de Configuración */
+  #settings-sidebar {
+    width: 250px;
+    background-color: var(--bg-darker);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+  }
+  
+  #settings-sidebar.active {
+    transform: translateX(0);
+  }
+  
+  .settings-menu {
+    list-style: none;
+  }
+  
+  .settings-menu li {
+    margin-bottom: 1rem;
+  }
+  
+  .settings-menu a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1rem;
+    display: block;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .settings-menu a:hover,
+  .settings-menu a.active {
+    background-color: var(--bg-light);
+    color: var(--primary-color);
+  }
+  
+  /* Contenido de Configuración */
+  #settings-content {
+    flex: 1;
+    position: relative;
+    background-color: rgba(43, 43, 43, 0.85);
+    border-radius: 12px;
+    padding: 2rem;
+    overflow: hidden;
+  }
+  
+  /* Fondo metallic animado para el contenido */
+  #settings-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(80,80,80,0.3), rgba(100,100,100,0.3), rgba(80,80,80,0.3));
+    background-size: 400% 400%;
+    z-index: -1;
+    opacity: 0.7;
+    animation: metallicGradient 20s ease infinite;
+  }
+  
+  @keyframes metallicGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .settings-section {
+    display: none;
+  }
+  
+  .settings-section.active {
+    display: block;
+  }
+  
+  .settings-section h2 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+  }
+  
+  .settings-section label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .settings-section input,
+  .settings-section select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    background-color: var(--bg-light);
+    border: 1px solid var(--accent-color);
+    color: var(--text-color);
+    border-radius: 8px;
+  }
+  
+  .settings-section input[type="checkbox"] {
+    width: auto;
+    margin-right: 0.5rem;
+  }
+  
+  /* Estilo para el control range */
+  .settings-section input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 5px;
+    background: var(--accent-color);
+    outline: none;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+  }
+  
+  .settings-section input[type="range"]:hover {
+    opacity: 1;
+  }
+  
+  .settings-section button {
+    margin-top: 1rem;
+  }
+  
+  .action-btn {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    color: var(--bg-dark);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 0.5rem;
+  }
+  
+  .action-btn:hover {
+    background-color: var(--secondary-color);
+  }
+  
+  .action-btn.danger {
+    background-color: var(--danger-color);
+    color: #fff;
+  }
+  
+  .action-btn.danger:hover {
+    background-color: #ff2d55;
+  }
+  
+  .action-btn.reset {
+    background-color: var(--accent-color);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    #main-content {
+      flex-direction: column;
+    }
+  
+    #settings-sidebar {
+      width: 100%;
+      transform: none;
+      transition: none;
+      margin-bottom: 1.5rem;
+    }
+  }
+  
